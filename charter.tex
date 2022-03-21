@@ -3,11 +3,11 @@
 codirector, % Uncomment to add a codirector to the title page
 ]{charter} 
 
-
+%Desarrollado en Ubuntu
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Título del proyecto} 
+\titulo{Sistema embebido para el monitoreo de parámetros fisiológicos y realización de espirometría digital} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 \posgrado{Carrera de Especialización en Sistemas Embebidos} 
@@ -17,7 +17,7 @@ codirector, % Uncomment to add a codirector to the title page
 %\posgrado{Maestría en Internet de las cosas}
 
 % Tu nombre, se puede usar el cualquier lugar del documento con el comando \authorname
-\autor{Nombre del Autor} 
+\autor{Carlos Silvestre Herrera Trujillo} 
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
 \director{Nombre del Director}
@@ -27,8 +27,8 @@ codirector, % Uncomment to add a codirector to the title page
 \pertenenciaCoDirector{FIUBA}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
-\cliente{Nombre del cliente}
-\empresaCliente{Empresa del cliente}
+\cliente{Dr. Felix Llanos Tejada}
+\empresaCliente{Hospital Nacional Dos de Mayo}
 
 % Nombre y pertenencia de los jurados, se pueden usar el cualquier lugar del documento con el comando \jurunoname, \jurdosname y \jurtresname y \perteunoname, \pertedosname y \pertetresname.
 \juradoUno{Nombre y Apellido (1)}
@@ -38,9 +38,9 @@ codirector, % Uncomment to add a codirector to the title page
 \juradoTres{Nombre y Apellido (3)}
 \pertenenciaJurTres{pertenencia (3)}
  
-\fechaINICIO{30 de abril de 2021}		%Fecha de inicio de la cursada de GdP \fechaInicioName
-\fechaFINALPlan{18 de junio de 2021} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{15 de mayo de 2022}	%Fecha de defensa pública del trabajo final
+\fechaINICIO{8 de marzo de 2022}		%Fecha de inicio de la cursada de GdP \fechaInicioName
+\fechaFINALPlan{5 de diciembre de 2022} 	%Fecha de final de cursada de GdP
+\fechaFINALTrabajo{12 de diciembre 2022}	%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -68,7 +68,7 @@ codirector, % Uncomment to add a codirector to the title page
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
-0      & Creación del documento                                 &\fechaInicioName \\ \hline
+1.0      & Creación del documento                                 &\fechaInicioName \\ \hline
 %1      & Se completa hasta el punto 4 inclusive                 & dd/mm/aaaa \\ \hline
 %2      & Se completa hasta el punto 7 inclusive
 %		  Se puede agregar algo más \newline
@@ -92,7 +92,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en \textcolor{red}{la implementación de un prototipo de un sistema de control de temperatura de un calefón}, y tendrá un presupuesto preliminar estimado de \textcolor{red}{600} hs de trabajo y \textcolor{red}{\$XXX}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el Bach. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en  un  prototipo  de sistema embebido para la realización de maniobras de espirometría y monitoreo de parámetros fisiológicos, el respectivo firwmare y la generación de modelo 3D que permita la fabricación de la estructura del equipo, y tendrá un presupuesto preliminar estimado de 600 hs de trabajo y \$20000, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -116,56 +116,62 @@ Se adjunta a esta acta la planificación inicial.
 \label{sec:descripcion}
 
 
-\begin{consigna}{red} % El bloque "consigna" se usa para poner texto en rojo y dar una pequeña ayuda sobre cómo completar la sección
+% El bloque "consigna" se usa para poner texto en rojo y dar una pequeña ayuda sobre cómo completar la sección
 
-El objetivo es que el lector en una o dos páginas entienda de qué se trata el proyecto y cuáles son sus desafíos, su motivación y su importancia.
+El proyecto consiste en el diseño e implementación de un sistema embebido que permita realizar las pruebas de espirometría, dicho dispositivo contará con las funcionalidades de medidor de pulso cardiaco y saturación de oxigeno, termómetro infrarrojo sin contacto, medidor de pasos. Además tendrá la característica de contar con una batería de li-ion que permita su uso portable y recarga a través de un puerto micro-usb.
 
-Se debe destacar claramente cuál es el valor que agrega el proyecto a realizar. ``El presente proyecto se destaca especialmente por incorporar tal cosa... Esto lo diferencia de otros sistemas similares en que ...''
-
-Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
-
+Para la realización de este proyecto se preveen los siguientes desafios:
 \begin{itemize}
-	\item ¿Cómo se vincula este proyecto con la misión de la organización?
-	\item ¿Cómo se inserta este proyecto en el modelo de negocio de la organización?
-	\item ¿Ayuda a la explicación si se incluye un lienzo Canvas del Modelo de Negocio?
-	\item ¿En qué estado del ciclo de vida está el producto que se desea reemplazar o mejorar?
-	\item ¿Cuáles son las necesidades que debe satisfacer?
-	\item ¿Por dónde pasa la innovación?
+	\item Desde el punto de vista de componentes, debido a la situación global el mercado de componentes electrónicos se encuentra sustancialmente reducido, y ello, impacta directamente en el desarrollo del proyecto ya que es indispensable la búsqueda de componentes de tamaño reducido para la fabricación de un equipo portátil.
+	\item Con el objetivo de poder utilizarse este dispositivo en el ambito de la medicina, es necesario que se encuentre calibrado, por  ello se deben adquirir los equipos necesarios con los cuales se puedan realizar las respectivas calibraciones de los sensores, además, contar con el apoyo del personal a fin de poder realizar correctamente dichos procesos.
+	\item El desafío más importante es el poder brindar un equipo que sea de bajo costo, para ello se debe optimizar el uso de componentes y cumplir con las capacidades principales anteriormente mencionadas, debido a que se prevee el uso de estos dispositivos en los hospitales a fin de realizar trabajos de telemedicina y posteriormente, obteniendo una patente, poder comercializarlos a nivel regional (America Latina).
 \end{itemize}
 
-La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema} y una frase como la siguiente: ``En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''. Luego recién más abajo de haber puesto esta frase, se pone la figura. La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
+Debido a que el presente proyecto sería la segunda versión del proyecto Phukuy se consideró que debe realizarse varios tipos de mejora, como la calibración del dispositivo por parte del area de investigación, la factibilidad de añadir características nuevas, así como, la corrección de errores de diseño encontrados en el prototipo previo. Así mismo realizar un rediseño que permita la creación de un nuevo modelo de estructura del dispositivo. 
+
+En la actualidad el efecto de la pandemia ha llegado a gran parte de la población, no solo económica o sicológicamente, sino principalmente por los daños generados en los pulmones por la enfermedad Covid19, por ello es necesario la realización de pruebas médicas y monitoreo del paciente, no obstante el acceso a hospitales y/o clínicas desde el 2020 ha sido restringido, existe en el Perú la falta de acceso a recursos médicos en las zonas alejadas, por ello se pensó en el desarrollo de un espirómetro que posea múltiples funciones, cuyos datos serán enviados a través del smartphone del paciente.
+
+El presente proyecto se destaca especialmente por incluir la funcionalidad de tres (03) dispositivos: pulso-oxímetro, termómetro infrarrojo y espirómetro, además de permitir la visualización de resultados a través de una APP en el smartphone, el uso de inteligencia artificial aplicada, siendo estos puntos una ventaja que puede permitir el ingreso al mercado nacional.
+
+
+El desarrollo de este dispositivo forma parte de los trabajos realizados por la Dirección de Investigación de la Universidad Peruana de Ciencias Aplicadas (UPC), cuyo interés principal es la generación de nuevas investigaciones y su posterior puesta en marcha como producto.
+
+
+En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que el sistema embebido tendrá un microcontrolador como elemento principal el cual se encargará del procesamiento de las señales capturadas a fin de transmitir datos semi finales al celular, de esta manera no sobrecargar de procesamiento a este último. Este dispositivo obtendrá los parametros fioslógicos a traves de los sensores de fotodiodo, termopila, así como los intervalos de tiempo de las interrupciones ópticas, los cuales tienen una correspondencia directa con el flujo de aire espirado por la turbina. Por último, poseerá indicadores leds y un indicador de sonido, los cuales también pueden ser activados por un comando enviado por la aplicación en el celular.
+
+
+
+
+
+
+
+
+
+
+
 
 %\vspace{25px}
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.5\textwidth]{./Figuras/diagBloques.png}
+\includegraphics[width=1\textwidth]{./Figuras/diagBloques2.png}
 \caption{Diagrama en bloques del sistema}
 \label{fig:diagBloques}
 \end{figure}
 
 \vspace{25px}
 
-El tamaño de la tipografía en TODAS las figuras debe ser adecuado para que NO pase lo que ocurre acá, donde el lector debe esforzarse para poder leer el texto. Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama, preferentemente en la gama de colores pastel.
-\end{consigna}
+
+
 
 
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
 
-\begin{consigna}{red} 
-Nota: (borrar esto y todas las consignas en color rojo antes de entregar este documento).
- 
-Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos.
- 
-Si se considera que una persona cumple dos o más roles, entonces sólo dejarla en el rol más importante. Por ejemplo:
 
-\begin{itemize}
-\item Si una persona es Cliente pero también colabora u orienta, dejarla solo como Cliente.
-\item Si una persona es el Responsable, no debe ser colocado también como Miembro del equipo.
-\end{itemize}
 
-Pero en cambio sí es usual que el Cliente y el Auspiciante sean el mismo, por ejemplo.
+
+
 
 \begin{table}[ht]
 %\caption{Identificación de los interesados}
@@ -174,75 +180,96 @@ Pero en cambio sí es usual que el Cliente y el Auspiciante sean el mismo, por e
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Auspiciante   &                   &              	&        	\\ \hline
-Cliente       & \clientename      &\empclientename	&        	\\ \hline
-Impulsor      &                   &              	&        	\\ \hline
+Auspiciante   &  Dr. Carlos Raymundo Ibañez                 & Universidad Peruana de Ciencias Aplicadas UPC              	& Profesor Investigador \\& & &  Coordinador general de investigación      	\\ \hline
+Cliente       & \clientename      &\empclientename	&   Médico Neumólogo     	\\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Colaboradores &                   &              	&        	\\ \hline
+Colaboradores & Jorge Heyul Chavez Arias, Cesar Cruz Gutierrez, Gianpierre Zapata Ramirez  &  Universidad Peruana de Ciencias Aplicadas UPC   & Asistentes de investigación   \\ \hline
+
 Orientador    & \supname	      & \pertesupname 	& Director Trabajo final \\ \hline
-Equipo        & miembro1 \newline 
-				miembro2          &              	&        	\\ \hline
-Opositores    &                   &              	&        	\\ \hline
-Usuario final &                   &              	&        	\\ \hline
+
+Opositores    & Fabricantes de equipos médicos de espirometría de la región de latino américa                  &              	&        	\\ \hline
+Usuario final &    Pacientes con deficiencias en vías respiratorias que requieren  un monitoreo del proceso de rehabilitación               &              	&        	\\ \hline
 \end{tabularx}
 \end{table}
 
-El Director suele ser uno de los Orientadores.
 
-No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
-
-No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
-
-Es deseable listar a continuación las principales características de cada interesado.
- 
-Por ejemplo:
 \begin{itemize}
-	\item Auspiciante: es riguroso y exigente con la rendición de gastos. Tener mucho cuidado con esto.
-	\item Equipo: Juan Perez, suele pedir licencia porque tiene un familiar con una enfermedad. Planificar considerando esto.
-	\item Orientador: María Gómez va a poder ayudar mucho con la definición de los requerimientos.
+	\item Auspiciante: es motivador, exigente, riguroso, innovador y altamente comprometido bajo objetivos finales.
+	\item Colaboradores: Heyul Chavez, se enfoncará en el desarrollo de la aplicación del celular con inteligencia artificial, puede brindar apoyo pero no es su principal función el desarrollo de hardware del presente proyecto.
+	\\ Cesar Cruz, se encuentra trabajando en otros proyectos, se puede pedir sugerencias.
+	\\ Gianpierre Zapata, ayuda principalmente con los trámites para la adquisición de material de los proyectos.
+	\item Orientador: .
 \end{itemize}
 
-\end{consigna}
+
+%\begin{table}[ht]
+%%\caption{Identificación de los interesados}
+%%\label{tab:interesados}
+%\begin{tabularx}{\linewidth}{@{}|l|X|X|l|@{}}
+%\hline
+%\rowcolor[HTML]{C0C0C0} 
+%Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
+%Auspiciante   &                   &              	&        	\\ \hline
+%Cliente       & \clientename      &\empclientename	&        	\\ \hline
+%Impulsor      &                   &              	&        	\\ \hline
+%Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
+%Colaboradores &                   &              	&        	\\ \hline
+%Orientador    & \supname	      & \pertesupname 	& Director Trabajo final \\ \hline
+%Equipo        & miembro1 \newline 
+%				miembro2          &              	&        	\\ \hline
+%Opositores    &                   &              	&        	\\ \hline
+%Usuario final &                   &              	&        	\\ \hline
+%\end{tabularx}
+%\end{table}
+
 
 
 
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 
-\begin{consigna}{red}
-¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
 
-Se recomienda que sea solo un párrafo que empiece diciendo ``El propósito de este proyecto es...''.
-\end{consigna}
+El propósito de este Proyecto es el desarrollo de un prototipo de sistema embebido de bajo costo  de espirómetro digital, como parte de un producto, basado en una arquitectura multifuncional con conexión inalámbrica bluetooth orientado al monitoreo remoto y diagnóstico a pacientes en rehabilitación de Covid 19.
+
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
 
-\begin{consigna}{red}
-¿Qué se incluye y que no se incluye en este proyecto?
 
-Se refiere al trabajo a hacer para entregar el producto o resultado especificado. 
 
-Explicitar todo lo quede comprendido dentro del alcance del proyecto.
+El presente proyecto incluye:
+\begin{itemize}
+	\item Diseño e implementación de placas electrónicas.
+	\item Exportación en 3D del diseñao realizado para su posterior impelemtnación en dispositivo.
+	\item Calibración de sensores para el envio de datos de forma inalámbrica.
+	\item Firmware del sistema embebido.
+\end{itemize}
 
-Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
 
-\end{consigna}
+El presente proyecto no incluye:
+\begin{itemize}
+	\item Validación clínica
+	\item No contempla el desarrollo del paquete tecnoloógico del producto
+	\item Diseño del modelo 3D de la estructura (case) del equipo.
 
+\end{itemize}
 
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
 
-\begin{consigna}{red}
-``Para el desarrollo del presente proyecto se supone que: ...''
+
+
+Para el desarrollo del presente proyecto se supone que: 
 
 \begin{itemize}
-	\item Supuesto 1
-	\item Supuesto 2...
+	\item Se dispondrá del tiempo necesario para la realización del proyecto en la jornada laboral.
+	\item Se dispondrá de los ambientes necesarios para la realización de las pruebas
+	\item Se dispondrá de los equipos de laboratorio electrónico para la realización del mismo.
+	\item Se dispondrá el uso de fondos del área de investigación así como las facilidades de adquisición de materiales.
+	\item Se dispondrá del área legal a fin de cumplir requisitos que puedan surgir debido a la importación de equipos y generación de patentes.
+	\item Se tendrá la colaboración de los miembros de investigación para el proceso de calibración.
+	
 \end{itemize}
-
-Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
-\end{consigna}
 
 \section{6. Requerimientos}
 \label{sec:requerimientos}
